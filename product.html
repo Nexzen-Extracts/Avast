@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Discription</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    
+    .product-detail {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top:80px;
+      margin-bottom: 80px;
+    }
+    img {
+      width: 300px;
+      border-radius: 8px;
+    }
+    .info {
+      flex: 1;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .price {
+      color: #007bff;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    a.back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    a.back-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <!-- 🔝 Top Offer Header -->
+  <div class="top-header">
+    <img src="image/discount-1-mono.svg" alt="offer" class="offer-icon" />
+    <p style="font-size:18px;">Save 30% on Premium Security</p>
+  </div>
+
+  <!-- 🧭 Main Header -->
+  <header class="main-header">
+    <!-- Left section -->
+    <div class="left-section">
+      <a href="home.html" target="_blank">
+  <img src="image/Avast_Business_SingleLine_Logo_V2_WhiteFill_Symbol_Without_TM_Positive_.png" 
+       alt="Logo" 
+       class="main-logo" />
+</a>
+
+
+      <div class="nav-section">
+        <!-- Top navigation -->
+        <div class="top-links">
+          <a href="#">For Home</a>
+          <a href="#">For Business</a>
+          <a href="#">For Partners</a>
+        </div>
+
+        <!-- Bottom navigation -->
+        <div class="bottom-links">
+          <div class="dropdown">
+            <a href="#">Security ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Free Antivirus</a></li>
+              <li><a href="#">Premium Security</a></li>
+              <li><a href="#">Ultimate </a></li>
+              <li><a href="#">Avast One</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <a href="#">Privacy ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">SecureLine VPN</a></li>
+              <li><a href="#">AntiTrack</a></li>
+              <li><a href="#">Secure Browser</a></li>
+              <li><a href="#">Secure Browser Pro</a></li>
+              <li><a href="#">Secure Identity</a></li>
+              <li><a href="#">Breach Guard</a></li>
+              <li><a href="#">Online Security & Privacy</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <a href="#">Performance ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Driver Updater</a></li>
+              <li><a href="#">Cleanup Premium</a></li>
+              
+            </ul>
+          </div>
+
+          <div class="shop-link">
+            <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="shop" class="shop-icon" />
+            <a href="shop.html">Shop</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right section -->
+    <div class="right-section">
+      <div class="top-right">
+        <a href="#" class="about-link">About</a>
+
+        <div class="dropdown">
+          <a href="#">Blogs ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Tech Updates</a></li>
+            <li><a href="#">Security Tips</a></li>
+            <li><a href="#">Business News</a></li>
+          </ul>
+        </div>
+
+        <!-- 🌐 Country Dropdown (use flag images) -->
+<div class="dropdown country-dropdown">
+  <a href="#" id="selected-country">
+    <img src="https://flagcdn.com/24x18/in.png" alt="IN" class="flag-small"> India - English ▾
+  </a>
+
+  <ul class="dropdown-menu" id="country-list">
+    <li data-flag-src="https://flagcdn.com/24x18/in.png" data-name="India" data-lang="English (IN)">
+      <a href="#"><img src="https://flagcdn.com/24x18/in.png" class="flag-small" alt="IN"> India - English</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/us.png" data-name="United States" data-lang="English (US)">
+      <a href="#"><img src="https://flagcdn.com/24x18/us.png" class="flag-small" alt="US"> US- English</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/gb.png" data-name="United Kingdom" data-lang="English (UK)">
+      <a href="#"><img src="https://flagcdn.com/24x18/gb.png" class="flag-small" alt="GB"> UK - English</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/fr.png" data-name="France" data-lang="Français">
+      <a href="#"><img src="https://flagcdn.com/24x18/fr.png" class="flag-small" alt="FR"> France - Français</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/de.png" data-name="Germany" data-lang="Deutsch">
+      <a href="#"><img src="https://flagcdn.com/24x18/de.png" class="flag-small" alt="DE"> Germany - Deutsch</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/jp.png" data-name="Japan" data-lang="日本語">
+      <a href="#"><img src="https://flagcdn.com/24x18/jp.png" class="flag-small" alt="JP"> Japan - 日本語</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/ca.png" data-name="Canada" data-lang="English (CA)">
+      <a href="#"><img src="https://flagcdn.com/24x18/ca.png" class="flag-small" alt="CA"> Canada - English</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/it.png" data-name="Italy" data-lang="Italiano">
+      <a href="#"><img src="https://flagcdn.com/24x18/it.png" class="flag-small" alt="IT"> Italy - Italiano</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/es.png" data-name="Spain" data-lang="Español">
+      <a href="#"><img src="https://flagcdn.com/24x18/es.png" class="flag-small" alt="ES"> Spain - Español</a>
+    </li>
+    <li data-flag-src="https://flagcdn.com/24x18/cn.png" data-name="China" data-lang="中文">
+      <a href="#"><img src="https://flagcdn.com/24x18/cn.png" class="flag-small" alt="CN"> China - 中文</a>
+    </li>
+  </ul>
+</div>
+
+      </div>
+
+      <div class="bottom-right">
+        <div class="link-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" alt="settings" class="icon" />
+          <a href="#">Settings</a>
+
+          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="account" class="icon" />
+          <a href="#">Account</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- Products -->
+
+  <div class="product-detail">
+    <img id="product-image" src="" alt="Product Image">
+    <div class="info">
+      <h2 id="product-name"></h2>
+      <p class="price" id="product-price"></p>
+      <p id="product-desc"></p>
+      <a href="shop.html" class="back-btn">← Back to Shop</a>
+    </div>
+  </div>
+
+  <script>
+    const products = [
+      {id: 1, name: "Avast Essential Business Security Box Shot", price: "$25", desc: "Avast Essential Business Security offers next-gen protection for small businesses. It defends devices from viruses, ransomware, and phishing attacks while ensuring data privacy and centralized management through Avast Business Hub.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Essential%20Business%20Security%20Box%20Shot.png"},
+      {id: 2, name: "Avast Premium Business Security Box Shot", price: "$40", desc: "Avast Premium Business Security combines our award-winning endpoint protection with VPN and privacy tools to help your employees stay private and safe online.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Business%20Security%20Box%20Shot.png"},
+      {id: 3, name: "Avast Ultimate Business Security Box Shot", price: "$35", desc: "Avast Ultimate Business Security combines our award-winning business antivirus, data prtection, our best privacy tools, and automated patch management to keep your devices and applications updated and secure.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Ultimate%20Business%20Security%20Box%20Shot.png"},
+      {id: 4, name: "Avast Business Patch Management box shot", price: "$50", desc: "Product data sheet with features and benefits for your SMB customers.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Patch%20Management%20Box%20Shot.png"},
+      {id: 5, name: "Avast Business Cloud Backup box shot", price: "$29", desc: "Product data sheet with features and benefits for your SMB customers.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Cloud%20Backup%20Box%20Shot.png"},
+      {id: 6, name: "Avast Business Premium Remote Control box shot", price: "$20", desc: "Provides an overview of the Avast Business Hub and all services available.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Remote%20Control%20Box%20Shot.png"},
+      {id: 7, name: "Product 7", price: "$33", desc: "High-quality product 7 description.", image: "images/product7.jpg"},
+      {id: 8, name: "Product 8", price: "$60", desc: "High-quality product 8 description.", image: "images/product8.jpg"},
+      
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get("id"));
+    const product = products.find(p => p.id === productId);
+
+    if (product) {
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-price").textContent = product.price;
+      document.getElementById("product-desc").textContent = product.desc;
+      document.getElementById("product-image").src = product.image;
+    } else {
+      document.querySelector(".product-detail").innerHTML = "<h2>Product not found!</h2>";
+    }
+  </script>
+<!-- Footer Section -->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand & Country -->
+    <div class="footer-brand">
+      <h2>Avast</h2>
+
+      <!-- Country & Language Dropdown -->
+      <div class="dropdown country-dropdown">
+        <a href="#" id="footer-selected-country">
+          <img src="https://flagcdn.com/24x18/us.png" class="flag-small" alt="US"> USA - English ▾
+        </a>
+
+        <ul class="dropdown-menu" id="footer-country-list">
+          <li data-flag-src="https://flagcdn.com/24x18/in.png" data-name="India" data-lang="English (IN)">
+            <a href="#"><img src="https://flagcdn.com/24x18/in.png" class="flag-small" alt="IN"> India - English</a>
+          </li>
+          <li data-flag-src="https://flagcdn.com/24x18/us.png" data-name="USA" data-lang="English">
+            <a href="#"><img src="https://flagcdn.com/24x18/us.png" class="flag-small" alt="US"> USA - English</a>
+          </li>
+          <li data-flag-src="https://flagcdn.com/24x18/gb.png" data-name="UK" data-lang="English (UK)">
+            <a href="#"><img src="https://flagcdn.com/24x18/gb.png" class="flag-small" alt="GB"> UK - English</a>
+          </li>
+          <li data-flag-src="https://flagcdn.com/24x18/fr.png" data-name="France" data-lang="Français">
+            <a href="#"><img src="https://flagcdn.com/24x18/fr.png" class="flag-small" alt="FR"> France - Français</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="social-icon">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733646.png" alt="YouTube" class="social-icon">
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="footer-links">
+      <h3>For Home</h3>
+      <a href="#">Support</a>
+      <a href="#">Security</a>
+      <a href="#">Privacy</a>
+      <a href="#">Performance</a>
+      <a href="#">Blog</a>
+      <a href="#">Forum</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>For Business</h3>
+      <a href="#">Business Support</a>
+      <a href="#">Business Products</a>
+      <a href="#">Business Partners</a>
+      <a href="#">Business Blog</a>
+      <a href="#">Affiliates</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>For Partners</h3>
+      <a href="#">Mobile Carriers</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>About</h3>
+      <a href="#">Contact Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Press Center</a>
+      <a href="#">Digital Trust</a>
+      <a href="#">Technology</a>
+      <a href="#">Research Participation</a>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 Gen Digital Inc. All rights reserved.</p>
+    <div class="legal-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Products Policy</a>
+      <a href="#">Legal</a>
+      <a href="#">Report Vulnerability</a>
+      <a href="#">Modern Slavery Statement</a>
+      <a href="#">Do Not Sell My Info</a>
+      <a href="#">Subscription Details</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

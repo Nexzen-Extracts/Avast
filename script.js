@@ -19,5 +19,20 @@ function setupCountryDropdown(dropdownId, selectedId) {
 // Setup for header dropdown
 setupCountryDropdown("country-list", "selected-country");
 
-// Setup for footer dropdown
+
 setupCountryDropdown("footer-country-list", "footer-selected-country");
+// home.html header
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector(".nav-section");
+  const right = document.querySelector(".right-section");
+
+  if (hamburger) {
+    hamburger.addEventListener("click", (e) => {
+      e.preventDefault(); 
+      nav.classList.toggle("active");
+      right.classList.toggle("active");
+      hamburger.classList.toggle("open"); 
+    });
+  }
+});

@@ -8,45 +8,102 @@
   <style>
     
     .product-detail {
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top:80px;
-      margin-bottom: 80px;
-    }
-    img {
-      width: 300px;
-      border-radius: 8px;
-    }
-    .info {
-      flex: 1;
-    }
-    h2 {
-      margin-top: 0;
-    }
-    .price {
-      color: #007bff;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    a.back-btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    a.back-btn:hover {
-      background: #0056b3;
-    }
+  max-width: 900px;
+  margin: 80px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.product-detail img {
+  width: 300px;
+  border-radius: 8px;
+}
+
+.info {
+  flex: 1;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.price {
+  color: #007bff;
+  font-size: 22px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.quantity {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.add-cart {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.add-cart:hover {
+  background-color: #218838;
+}
+
+.buy-now {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.buy-now:hover {
+  background-color: #e0a800;
+}
+
+a.back-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a.back-btn:hover {
+  background: #0056b3;
+}
+
   </style>
 </head>
 <body>
@@ -115,9 +172,7 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Right section -->
+    </div> 
     <div class="right-section">
       <div class="top-right">
         <a href="#" class="about-link">About</a>
@@ -129,9 +184,7 @@
             <li><a href="#">Security Tips</a></li>
             <li><a href="#">Business News</a></li>
           </ul>
-        </div>
-
-        <!-- 🌐 Country Dropdown (use flag images) -->
+        </div> 
 <div class="dropdown country-dropdown">
   <a href="#" id="selected-country">
     <img src="https://flagcdn.com/24x18/in.png" alt="IN" class="flag-small"> India - English ▾
@@ -169,10 +222,8 @@
       <a href="#"><img src="https://flagcdn.com/24x18/cn.png" class="flag-small" alt="CN"> China - 中文</a>
     </li>
   </ul>
-</div>
-
-      </div>
-
+</div> 
+      </div> 
       <div class="bottom-right">
         <div class="link-item">
           <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" alt="settings" class="icon" />
@@ -183,53 +234,71 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> 
+   <!-- Products -->
+<div class="product-detail">
+  <img id="product-image" src="" alt="Product Image">
+  <div class="info">
+    <h2 id="product-name"></h2>
+    <p class="price" id="product-price"></p>
+    <p id="product-desc"></p>
 
-    <!-- Products -->
-
-  <div class="product-detail">
-    <img id="product-image" src="" alt="Product Image">
-    <div class="info">
-      <h2 id="product-name"></h2>
-      <p class="price" id="product-price"></p>
-      <p id="product-desc"></p>
-      <a href="shop.html" class="back-btn">← Back to Shop</a>
+    <div class="quantity">
+      <label for="qty">Quantity:</label>
+      <input type="number" id="qty" value="1" min="1">
     </div>
+
+    <div class="actions">
+      <button class="btn add-cart">Add to Cart</button>
+      <button class="btn buy-now">Buy Now</button>
+    </div>
+
+    <a href="shop.html" class="back-btn">← Back to Shop</a>
   </div>
+</div>
+
 
   <script>
     const products = [
-      {id: 1, name: "Avast Essential Business Security Box Shot", price: "$25", desc: "Avast Essential Business Security offers next-gen protection for small businesses. It defends devices from viruses, ransomware, and phishing attacks while ensuring data privacy and centralized management through Avast Business Hub.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Essential%20Business%20Security%20Box%20Shot.png"},
-      {id: 2, name: "Avast Premium Business Security Box Shot", price: "$40", desc: "Avast Premium Business Security combines our award-winning endpoint protection with VPN and privacy tools to help your employees stay private and safe online.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Business%20Security%20Box%20Shot.png"},
-      {id: 3, name: "Avast Ultimate Business Security Box Shot", price: "$35", desc: "Avast Ultimate Business Security combines our award-winning business antivirus, data prtection, our best privacy tools, and automated patch management to keep your devices and applications updated and secure.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Ultimate%20Business%20Security%20Box%20Shot.png"},
-      {id: 4, name: "Avast Business Patch Management box shot", price: "$50", desc: "Product data sheet with features and benefits for your SMB customers.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Patch%20Management%20Box%20Shot.png"},
-      {id: 5, name: "Avast Business Cloud Backup box shot", price: "$29", desc: "Product data sheet with features and benefits for your SMB customers.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Cloud%20Backup%20Box%20Shot.png"},
-      {id: 6, name: "Avast Business Premium Remote Control box shot", price: "$20", desc: "Provides an overview of the Avast Business Hub and all services available.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Remote%20Control%20Box%20Shot.png"},
-       
-    ];
+  {id: 1, name: "Avast Essential Business Security Box Shot", price: 25, desc: "Avast Essential Business Security offers next-gen protection for small businesses. It defends devices from viruses, ransomware, and phishing attacks while ensuring data privacy and centralized management through Avast Business Hub.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Essential%20Business%20Security%20Box%20Shot.png"},
+  {id: 2, name: "Avast Premium Business Security Box Shot", price: 40, desc: "Avast Premium Business Security combines our award-winning endpoint protection with VPN and privacy tools to help your employees stay private and safe online.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Business%20Security%20Box%20Shot.png"},
+  {id: 3, name: "Avast Ultimate Business Security Box Shot", price: 35, desc: "Avast Ultimate Business Security combines our award-winning business antivirus, data prtection, our best privacy tools, and automated patch management to keep your devices and applications updated and secure.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Ultimate%20Business%20Security%20Box%20Shot.png"},
+  {id: 4, name: "Avast Business Patch Management box shot", price: 50, desc: "Product data sheet with features and benefits for your SMB customers.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Patch%20Management%20Box%20Shot.png"},
+  {id: 5, name: "Avast Business Cloud Backup box shot", price: 29, desc: "Product data sheet with features and benefits for your SMB customers.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Cloud%20Backup%20Box%20Shot.png"},
+  {id: 6, name: "Avast Business Premium Remote Control box shot", price: 20, desc: "Provides an overview of the Avast Business Hub and all services available.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Remote%20Control%20Box%20Shot.png"},
+];
 
-    const params = new URLSearchParams(window.location.search);
-    const productId = parseInt(params.get("id"));
-    const product = products.find(p => p.id === productId);
+const params = new URLSearchParams(window.location.search);
+const productId = parseInt(params.get("id"));
+const product = products.find(p => p.id === productId);
 
-    if (product) {
-      document.getElementById("product-name").textContent = product.name;
-      document.getElementById("product-price").textContent = product.price;
-      document.getElementById("product-desc").textContent = product.desc;
-      document.getElementById("product-image").src = product.image;
-    } else {
-      document.querySelector(".product-detail").innerHTML = "<h2>Product not found!</h2>";
-    }
+if (product) {
+  document.getElementById("product-name").textContent = product.name;
+  document.getElementById("product-price").textContent = `$${product.price}`;
+  document.getElementById("product-desc").textContent = product.desc;
+  document.getElementById("product-image").src = product.image;
+} else {
+  document.querySelector(".product-detail").innerHTML = "<h2>Product not found!</h2>";
+}
+
+document.querySelector(".add-cart").addEventListener("click", () => {
+  const qty = parseInt(document.getElementById("qty").value);
+  alert(`${qty} x ${product.name} added to cart!`);
+});
+
+document.querySelector(".buy-now").addEventListener("click", () => {
+  const qty = parseInt(document.getElementById("qty").value);
+  alert(`Proceeding to buy ${qty} x ${product.name}`);
+});
+
   </script>
 <!-- Footer Section -->
 <footer class="site-footer">
   <div class="footer-container">
-
-    <!-- Brand & Country -->
+ 
     <div class="footer-brand">
       <h2>Avast</h2>
-
-      <!-- Country & Language Dropdown -->
+ 
       <div class="dropdown country-dropdown">
         <a href="#" id="footer-selected-country">
           <img src="https://flagcdn.com/24x18/us.png" class="flag-small" alt="US"> USA - English ▾
@@ -249,9 +318,7 @@
             <a href="#"><img src="https://flagcdn.com/24x18/fr.png" class="flag-small" alt="FR"> France - Français</a>
           </li>
         </ul>
-      </div>
-
-      <!-- Social Links -->
+      </div> 
       <div class="social-links">
         <a href="https://www.facebook.com" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">

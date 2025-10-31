@@ -235,9 +235,17 @@ a.back-btn:hover {
       </div>
     </div>
   </header> 
-   <!-- Products -->
+   <!-- Products Section -->
 <div class="product-detail">
-  <img id="product-image" src="" alt="Product Image">
+  <div class="image-gallery">
+    <img id="main-image" src="" alt="Product Image" class="zoom">
+    <div class="thumbs">
+      <img src="" alt="Thumbnail 1" class="thumb">
+      <img src="" alt="Thumbnail 2" class="thumb">
+      <img src="" alt="Thumbnail 3" class="thumb">
+    </div>
+  </div>
+
   <div class="info">
     <h2 id="product-name"></h2>
     <p class="price" id="product-price"></p>
@@ -249,7 +257,7 @@ a.back-btn:hover {
     </div>
 
     <div class="actions">
-      <button class="btn add-cart">Add to Cart</button>
+      <button class="btn add-cart">Add to Cart</button></a>
       <button class="btn buy-now">Buy Now</button>
     </div>
 
@@ -257,41 +265,219 @@ a.back-btn:hover {
   </div>
 </div>
 
+<!-- Related Products -->
+<h3 style="text-align:center; margin-top:50px;">Related Products</h3>
+<div class="related-products" id="related-products"></div>
 
-  <script>
-    const products = [
-  {id: 1, name: "Avast Essential Business Security Box Shot", price: 25, desc: "Avast Essential Business Security offers next-gen protection for small businesses. It defends devices from viruses, ransomware, and phishing attacks while ensuring data privacy and centralized management through Avast Business Hub.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Essential%20Business%20Security%20Box%20Shot.png"},
-  {id: 2, name: "Avast Premium Business Security Box Shot", price: 40, desc: "Avast Premium Business Security combines our award-winning endpoint protection with VPN and privacy tools to help your employees stay private and safe online.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Business%20Security%20Box%20Shot.png"},
-  {id: 3, name: "Avast Ultimate Business Security Box Shot", price: 35, desc: "Avast Ultimate Business Security combines our award-winning business antivirus, data prtection, our best privacy tools, and automated patch management to keep your devices and applications updated and secure.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Ultimate%20Business%20Security%20Box%20Shot.png"},
-  {id: 4, name: "Avast Business Patch Management box shot", price: 50, desc: "Product data sheet with features and benefits for your SMB customers.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Patch%20Management%20Box%20Shot.png"},
-  {id: 5, name: "Avast Business Cloud Backup box shot", price: 29, desc: "Product data sheet with features and benefits for your SMB customers.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Cloud%20Backup%20Box%20Shot.png"},
-  {id: 6, name: "Avast Business Premium Remote Control box shot", price: 20, desc: "Provides an overview of the Avast Business Hub and all services available.", image: "https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Remote%20Control%20Box%20Shot.png"},
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="close-modal">&times;</span>
+    <p id="modal-msg"></p>
+    <a href="cart.html"><button>Go to Cart</button></a>
+
+    <button id="continue-shopping">Continue Shopping</button>
+  </div>
+</div>
+
+<style>
+/* Gallery */
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.image-gallery img {
+  border-radius: 8px;
+  max-width: 100%;
+  cursor: zoom-in;
+}
+.thumbs {
+  display: flex;
+  gap: 10px;
+}
+.thumbs img {
+  width: 60px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.thumbs img:hover {
+  border-color: #007bff;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background: #fff;
+  margin: 20% auto;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  border-radius: 12px;
+  position: relative;
+}
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+#go-cart, #continue-shopping {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+}
+#go-cart { background: #28a745; color: white; }
+#continue-shopping { background: #007bff; color: white; }
+
+/* Related Products */
+.related-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+.related-products .product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+}
+.related-products img {
+  width: 100%;
+  border-radius: 8px;
+}
+.related-products h4 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+.related-products p {
+  font-size: 14px;
+  color: #007bff;
+  font-weight: bold;
+}
+.related-products button {
+  margin-top: 5px;
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #28a745;
+  color: white;
+}
+</style>
+
+<script>
+// Existing products array
+const products = [
+  {id:1, name:"Avast Essential Business Security", price:25, desc:"Next-gen protection for small businesses.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Essential%20Business%20Security%20Box%20Shot.png"},
+  {id:2, name:"Avast Premium Business Security", price:40, desc:"Award-winning protection with VPN & privacy tools.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Business%20Security%20Box%20Shot.png"},
+  {id:3, name:"Avast Ultimate Business Security", price:35, desc:"Business antivirus with privacy & patch management.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Ultimate%20Business%20Security%20Box%20Shot.png"},
+  {id:4, name:"Avast Business Patch Management", price:50, desc:"Patch management for your SMB devices.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Patch%20Management%20Box%20Shot.png"},
 ];
 
+// Load product by ID from URL
 const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get("id"));
 const product = products.find(p => p.id === productId);
 
-if (product) {
+if(product){
   document.getElementById("product-name").textContent = product.name;
   document.getElementById("product-price").textContent = `$${product.price}`;
   document.getElementById("product-desc").textContent = product.desc;
-  document.getElementById("product-image").src = product.image;
-} else {
-  document.querySelector(".product-detail").innerHTML = "<h2>Product not found!</h2>";
+  document.getElementById("main-image").src = product.image;
+
+  // Thumbnail gallery
+  const thumbs = document.querySelectorAll(".thumb");
+  thumbs.forEach((t,i)=>{
+    t.src = products[i % products.length].image;
+    t.addEventListener("click",()=>{document.getElementById("main-image").src = t.src});
+  });
 }
 
-document.querySelector(".add-cart").addEventListener("click", () => {
-  const qty = parseInt(document.getElementById("qty").value);
-  alert(`${qty} x ${product.name} added to cart!`);
+// Zoom effect
+const mainImg = document.getElementById("main-image");
+mainImg.addEventListener("mouseover", function(){
+  this.style.transform = "scale(1.5)";
+  this.style.transition = "transform 0.3s ease";
+});
+mainImg.addEventListener("mouseout", function(){
+  this.style.transform = "scale(1)";
 });
 
-document.querySelector(".buy-now").addEventListener("click", () => {
+// Modal functionality
+const modal = document.getElementById("modal");
+const modalMsg = document.getElementById("modal-msg");
+document.querySelector(".add-cart").addEventListener("click", ()=>{
   const qty = parseInt(document.getElementById("qty").value);
-  alert(`Proceeding to buy ${qty} x ${product.name}`);
+
+  // Add to localStorage cart
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingIndex = cart.findIndex(item=>item.id===product.id);
+  if(existingIndex >= 0){
+    cart[existingIndex].qty += qty;
+  } else {
+    cart.push({id: product.id, name: product.name, price: product.price, image: product.image, qty: qty});
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Show modal
+  modalMsg.textContent = `${qty} x ${product.name} added to cart!`;
+  modal.style.display = "block";
+});
+document.querySelector(".buy-now").addEventListener("click", ()=>{
+  const qty = parseInt(document.getElementById("qty").value);
+
+  // Add to localStorage cart
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingIndex = cart.findIndex(item=>item.id===product.id);
+  if(existingIndex >= 0){
+    cart[existingIndex].qty += qty;
+  } else {
+    cart.push({id: product.id, name: product.name, price: product.price, image: product.image, qty: qty});
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Redirect to cart page
+  window.location.href = "cart.html";
 });
 
-  </script>
+// Close modal
+document.getElementById("close-modal").onclick = ()=> modal.style.display = "none";
+document.getElementById("continue-shopping").onclick = ()=> modal.style.display = "none";
+window.onclick = (e)=> { if(e.target==modal) modal.style.display="none"; }
+
+// Related products
+const relatedContainer = document.getElementById("related-products");
+products.filter(p=>p.id!==productId).forEach(p=>{
+  const card = document.createElement("div");
+  card.className = "product-card";
+  card.innerHTML = `
+    <img src="${p.image}" alt="${p.name}">
+    <h4>${p.name}</h4>
+    <p>$${p.price}</p>
+    <a href="product.html?id=${p.id}"><button>View</button></a>
+  `;
+  relatedContainer.appendChild(card);
+});
+</script>
+
+
 <!-- Footer Section -->
 <footer class="site-footer">
   <div class="footer-container">

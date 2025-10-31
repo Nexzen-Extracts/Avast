@@ -27,12 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".nav-section");
   const right = document.querySelector(".right-section");
 
-  if (hamburger) {
-    hamburger.addEventListener("click", (e) => {
-      e.preventDefault(); 
-      nav.classList.toggle("active");
-      right.classList.toggle("active");
-      hamburger.classList.toggle("open"); 
-    });
-  }
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    right.classList.toggle("active");
+    hamburger.classList.toggle("open");
+  });
 });
+

@@ -636,35 +636,7 @@ a:hover { color: #007bff; }
   border-radius: 2px;
 }
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-  .nav-section, .right-section {
-    display: none; 
-    width: 100%;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .nav-section.active, .right-section.active {
-    display: flex;
-  }
-  .top-links, .bottom-links, .top-right, .bottom-right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .dropdown-menu {
-    position: relative;
-    top: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-    box-shadow: none;
-  }
-}
-/* ✅ FINAL FULL MOBILE HEADER FIX */
-@media (max-width: 768px) {
-  /* Stack header items */
+  /* Stack the header items vertically */
   .main-header {
     flex-direction: column;
     align-items: flex-start;
@@ -672,53 +644,52 @@ a:hover { color: #007bff; }
     width: 100%;
   }
 
-  /* Fix left section */
+  /* Logo + hamburger row */
   .left-section {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
   }
 
-  /* Logo responsive */
   .main-logo {
     width: 180px;
     height: auto;
   }
 
-  /* Hamburger on right of logo */
   .hamburger {
     display: flex;
     flex-direction: column;
     gap: 4px;
     cursor: pointer;
-    margin-left: auto;
     z-index: 1000;
   }
 
-  /* Hide both sections by default */
+  /* Hide menus by default */
   .nav-section,
   .right-section {
     display: none;
     width: 100%;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  /* When hamburger clicked */
+  /* Show both sections when hamburger clicked */
   .nav-section.active,
   .right-section.active {
     display: flex !important;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    background-color: #fff;
     width: 100%;
-    padding: 20px;
+    padding: 15px 0;
+    background-color: #fff;
     border-top: 1px solid #ddd;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     animation: slideDown 0.3s ease;
   }
 
-  /* Stack link groups neatly */
+  /* Stack all link groups */
   .top-links,
   .bottom-links,
   .top-right,
@@ -729,11 +700,9 @@ a:hover { color: #007bff; }
     width: 100%;
   }
 
-  /* Make dropdowns appear normally in mobile */
+  /* Dropdown menus */
   .dropdown-menu {
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
     border: none;
     background: #f9f9f9;
@@ -741,7 +710,20 @@ a:hover { color: #007bff; }
     padding-left: 15px;
   }
 
-  /* Slide animation */
+  /* Hamburger animation */
+  .hamburger div {
+    transition: all 0.3s ease;
+  }
+  .hamburger.open div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.open div:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
   @keyframes slideDown {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }

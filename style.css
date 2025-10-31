@@ -635,7 +635,7 @@ a:hover { color: #007bff; }
   background-color: #333;
   border-radius: 2px;
 }
-@media (max-width: 768px) {
+@media (max-width: 668px) {
   /* Stack the header items vertically */
   .main-header {
     flex-direction: column;
@@ -653,7 +653,7 @@ a:hover { color: #007bff; }
   }
 
   .main-logo {
-    width: 180px;
+    width: 130px;
     height: auto;
   }
 

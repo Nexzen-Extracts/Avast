@@ -175,7 +175,7 @@ a.back-btn:hover {
     </div> 
     <div class="right-section">
       <div class="top-right">
-        <a href="#" class="about-link">About</a>
+        <a href="about.html" class="about-link">About</a>
 
         <div class="dropdown">
           <a href="#">Blogs ▾</a>
@@ -234,8 +234,7 @@ a.back-btn:hover {
         </div>
       </div>
     </div>
-  </header> 
-   <!-- Products Section -->
+  </header>  
 <div class="product-detail">
   <div class="image-gallery">
     <img id="main-image" src="" alt="Product Image" class="zoom">
@@ -264,12 +263,9 @@ a.back-btn:hover {
     <a href="shop.html" class="back-btn">← Back to Shop</a>
   </div>
 </div>
-
-<!-- Related Products -->
+ 
 <h3 style="text-align:center; margin-top:50px;">Related Products</h3>
-<div class="related-products" id="related-products"></div>
-
-<!-- Modal -->
+<div class="related-products" id="related-products"></div> 
 <div id="modal" class="modal">
   <div class="modal-content">
     <span id="close-modal">&times;</span>
@@ -280,8 +276,7 @@ a.back-btn:hover {
   </div>
 </div>
 
-<style>
-/* Gallery */
+<style> 
 .image-gallery {
   display: flex;
   flex-direction: column;
@@ -304,9 +299,7 @@ a.back-btn:hover {
 }
 .thumbs img:hover {
   border-color: #007bff;
-}
-
-/* Modal */
+} 
 .modal {
   display: none;
   position: fixed;
@@ -342,8 +335,7 @@ a.back-btn:hover {
 }
 #go-cart { background: #28a745; color: white; }
 #continue-shopping { background: #007bff; color: white; }
-
-/* Related Products */
+ 
 .related-products {
   display: flex;
   flex-wrap: wrap;
@@ -389,9 +381,10 @@ const products = [
   {id:2, name:"Avast Premium Business Security", price:40, desc:"Award-winning protection with VPN & privacy tools.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Business%20Security%20Box%20Shot.png"},
   {id:3, name:"Avast Ultimate Business Security", price:35, desc:"Business antivirus with privacy & patch management.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Ultimate%20Business%20Security%20Box%20Shot.png"},
   {id:4, name:"Avast Business Patch Management", price:50, desc:"Patch management for your SMB devices.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Patch%20Management%20Box%20Shot.png"},
+  {id:5, name:"Avast Business Cloud Backup box shot", price:29, desc:"Avast Business Cloud Backup safeguards your critical business data with automated, cloud-based protection you can count on. Designed for companies of all sizes, it ensures your files, documents, and system images are always backed up and easily recoverable in the event of hardware failure, ransomware, or human error.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Cloud%20Backup%20Box%20Shot.png"},
+  {id:6, name:"Avast Business Premium Remote Control box shot", price:20, desc:"Avast Business Premium Remote Control allows IT administrators and support teams to connect to user devices instantly and resolve issues without leaving their desks. Designed for today’s hybrid workplaces, it delivers fast, seamless, and secure remote sessions directly from the Avast Business Hub.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Remote%20Control%20Box%20Shot.png"},
 ];
-
-// Load product by ID from URL
+ 
 const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get("id"));
 const product = products.find(p => p.id === productId);
@@ -420,7 +413,7 @@ mainImg.addEventListener("mouseout", function(){
   this.style.transform = "scale(1)";
 });
 
-// Modal functionality
+ 
 const modal = document.getElementById("modal");
 const modalMsg = document.getElementById("modal-msg");
 document.querySelector(".add-cart").addEventListener("click", ()=>{
@@ -436,14 +429,13 @@ document.querySelector(".add-cart").addEventListener("click", ()=>{
   }
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  // Show modal
+
   modalMsg.textContent = `${qty} x ${product.name} added to cart!`;
   modal.style.display = "block";
 });
 document.querySelector(".buy-now").addEventListener("click", ()=>{
   const qty = parseInt(document.getElementById("qty").value);
-
-  // Add to localStorage cart
+ 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const existingIndex = cart.findIndex(item=>item.id===product.id);
   if(existingIndex >= 0){
@@ -456,13 +448,11 @@ document.querySelector(".buy-now").addEventListener("click", ()=>{
   // Redirect to cart page
   window.location.href = "cart.html";
 });
-
-// Close modal
+  
 document.getElementById("close-modal").onclick = ()=> modal.style.display = "none";
 document.getElementById("continue-shopping").onclick = ()=> modal.style.display = "none";
 window.onclick = (e)=> { if(e.target==modal) modal.style.display="none"; }
-
-// Related products
+ 
 const relatedContainer = document.getElementById("related-products");
 products.filter(p=>p.id!==productId).forEach(p=>{
   const card = document.createElement("div");
@@ -548,7 +538,7 @@ products.filter(p=>p.id!==productId).forEach(p=>{
 
     <div class="footer-links">
       <h3>About</h3>
-      <a href="#">Contact Us</a>
+      <a href="contact.html">Contact Us</a>
       <a href="#">Careers</a>
       <a href="#">Press Center</a>
       <a href="#">Digital Trust</a>
@@ -562,7 +552,7 @@ products.filter(p=>p.id!==productId).forEach(p=>{
   <div class="footer-bottom">
     <p>© 2025 Gen Digital Inc. All rights reserved.</p>
     <div class="legal-links">
-      <a href="#">Privacy Policy</a>
+      <a href="privacy.html">Privacy Policy</a>
       <a href="#">Products Policy</a>
       <a href="#">Legal</a>
       <a href="#">Report Vulnerability</a>

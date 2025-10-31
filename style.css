@@ -1602,4 +1602,77 @@ h1 {
 }
 
 
-/* product.html */
+/* about.html */
+/* Base Styles */
+.about-section {
+  text-align: center;
+  padding: 50px 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+}
+
+.about-section h2 {
+  font-size: 42px;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color: #333;
+  line-height: 1.2;
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.about-section img {
+  display: block;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.about-section h3 {
+  font-size: 1.5rem;
+  color: #ff7800;
+  margin-top: 15px;
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+  .about-section h2 {
+    font-size: 30px;
+  }
+  .about-section p {
+    font-size: 18px;
+  }
+  .about-section h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 30px 10px;
+  }
+  .about-section h2 {
+    font-size: 26px;
+  }
+  .about-section p {
+    font-size: 16px;
+  }
+  .about-section img {
+    max-width: 90%;
+  }
+  .about-section h3 {
+    font-size: 1.1rem;
+  }
+}
+

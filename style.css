@@ -29,7 +29,7 @@ header img {
   min-width: 800px;
 }
 .hero h1 {
-  font-size: 58px;
+  font-size: 55px;
   color: #222;
   margin-top:80px;
 }
@@ -228,17 +228,13 @@ header img {
     position:center;
   }
 } 
+/* ================== DESKTOP ================== */
 .compare-section {
   width: 90%;
   max-width: 1200px;
   margin: 40px auto;
   text-align: center;
-} 
-.compare-section h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 30px;
-} 
+}
 .merged-comparison {
   width: 100%;
   border-collapse: collapse;
@@ -246,37 +242,37 @@ header img {
   border-radius: 10px;
   overflow: hidden;
   background-color: #fff;
-} 
+}
 .merged-comparison th,
 .merged-comparison td {
   border: 1px solid #ddd;
   padding: 15px;
   text-align: center;
   vertical-align: middle;
-} 
+}
 .merged-comparison th {
   background-color: #f9f9f9;
-} 
+}
 .merged-comparison .feature {
   text-align: left;
   font-weight: 500;
   background-color: #fafafa;
-} 
+}
 .plan-logo {
   width: 70px;
   height: 70px;
   margin-bottom: 10px;
-} 
+}
 .price {
   font-size: 20px;
   font-weight: bold;
   margin: 8px 0;
-} 
+}
 .price span {
   text-decoration: line-through;
   color: #888;
   font-size: 14px;
-} 
+}
 .save {
   color: white;
   background: #3cb043;
@@ -285,15 +281,15 @@ header img {
   border-radius: 6px;
   font-size: 12px;
   margin-bottom: 6px;
-} 
+}
 .save-green {
   background: #2f8f2f;
-} 
+}
 .note {
   font-size: 13px;
   color: #555;
   margin-bottom: 8px;
-} 
+}
 .btn {
   background-color: #005fff;
   color: white;
@@ -303,19 +299,89 @@ header img {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
-} 
+}
 .btn:hover {
   background-color: #0045c2;
-} 
+}
 .tick {
   background-color:#ffefe0;
   color: black;
   font-weight: bold;
   border-color:#ffefe0;
-} 
+}
 .tick:hover {
   background-color: #ffefe0;
-} 
+}
+
+/* ================== MOBILE ================== */
+@media (max-width: 768px) {
+  /* Convert table into card-style layout */
+  .merged-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: none;
+    border: none;
+  }
+
+  .merged-comparison tr {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+  .merged-comparison th,
+  .merged-comparison td {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    padding: 5px 10px;
+    border: none;
+  }
+
+  /* Plan cards */
+  .plan-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px auto;
+  }
+  .price {
+    font-size: 18px;
+  }
+  .save, .save-green {
+    margin: 5px auto;
+    display: inline-block;
+  }
+  .btn {
+    padding: 8px 25px;
+    margin-top: 10px;
+  }
+
+  /* Feature text */
+  .merged-comparison .feature p {
+    margin: 3px 0;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* Tick / Cross styling */
+  .tick {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 5px;
+    color: #2ecc71;
+  }
+  .cross {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 5px;
+    color: #e74c3c;
+  }
+}
+
+
+
 .info-section {
   width: 100%;
   max-width: 1500px;
@@ -1600,10 +1666,41 @@ h1 {
 .product button:hover {
   background-color: #ffbf00;
 }
-
+@media (max-width: 900px) {
+  .product-container {
+    gap: 15px;
+  }
+  .product h3 {
+    font-size: 16px;
+  }
+  .product p {
+    font-size: 14px;
+  }
+  .product button {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+}
+@media (max-width: 600px) {
+  .product-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 0 10px 50px 10px;
+  }
+  .product h3 {
+    font-size: 15px;
+  }
+  .product p {
+    font-size: 14px;
+  }
+  .product button {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}
 
 /* about.html */
-/* Base Styles */
+
 .about-section {
   text-align: center;
   padding: 50px 20px;
@@ -1642,7 +1739,7 @@ h1 {
   margin-top: 15px;
 }
 
-/* ✅ Responsive Adjustments */
+/*  */
 @media (max-width: 768px) {
   .about-section {
     padding: 40px 15px;

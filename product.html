@@ -17,50 +17,42 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-}
-
+} 
 .product-detail img {
   width: 300px;
   border-radius: 8px;
-}
-
+} 
 .info {
   flex: 1;
-}
-
+} 
 h2 {
   margin-top: 0;
   font-size: 28px;
-}
-
+} 
 .price {
   color: #007bff;
   font-size: 22px;
   margin: 10px 0;
   font-weight: bold;
-}
-
+} 
 .quantity {
   margin: 15px 0;
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
+} 
 .quantity input {
   width: 60px;
   padding: 5px;
   border-radius: 6px;
   border: 1px solid #ccc;
   text-align: center;
-}
-
+} 
 .actions {
   display: flex;
   gap: 15px;
   margin-bottom: 20px;
-}
-
+} 
 .btn {
   padding: 12px 25px;
   border-radius: 8px;
@@ -69,26 +61,21 @@ h2 {
   font-weight: bold;
   font-size: 16px;
   transition: all 0.3s ease;
-}
-
+} 
 .add-cart {
   background-color: #28a745;
   color: #fff;
-}
-
+} 
 .add-cart:hover {
   background-color: #218838;
-}
-
+} 
 .buy-now {
   background-color: #ffc107;
   color: #000;
-}
-
+} 
 .buy-now:hover {
   background-color: #e0a800;
-}
-
+} 
 a.back-btn {
   display: inline-block;
   margin-top: 10px;
@@ -98,12 +85,10 @@ a.back-btn {
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
-}
-
+} 
 a.back-btn:hover {
   background: #0056b3;
-}
-
+} 
   </style>
 </head>
 <body>
@@ -111,8 +96,7 @@ a.back-btn:hover {
   <div class="top-header">
     <img src="image/discount-1-mono.svg" alt="offer" class="offer-icon" />
     <p style="font-size:18px;">Save 30% on Premium Security</p>
-  </div>
-
+  </div> 
   <!-- 🧭 Main Header -->
   <header class="main-header">
     <!-- Left section -->
@@ -121,17 +105,14 @@ a.back-btn:hover {
   <img src="image/Avast_Business_SingleLine_Logo_V2_WhiteFill_Symbol_Without_TM_Positive_.png" 
        alt="Logo" 
        class="main-logo" />
-</a>
-
-
+</a> 
       <div class="nav-section">
         <!-- Top navigation -->
         <div class="top-links">
           <a href="#">For Home</a>
           <a href="#">For Business</a>
           <a href="#">For Partners</a>
-        </div>
-
+        </div> 
         <!-- Bottom navigation -->
         <div class="bottom-links">
           <div class="dropdown">
@@ -143,7 +124,6 @@ a.back-btn:hover {
               <li><a href="#">Avast One</a></li>
             </ul>
           </div>
-
           <div class="dropdown">
             <a href="#">Privacy ▾</a>
             <ul class="dropdown-menu">
@@ -155,17 +135,14 @@ a.back-btn:hover {
               <li><a href="#">Breach Guard</a></li>
               <li><a href="#">Online Security & Privacy</a></li>
             </ul>
-          </div>
-
+          </div> 
           <div class="dropdown">
             <a href="#">Performance ▾</a>
             <ul class="dropdown-menu">
               <li><a href="#">Driver Updater</a></li>
-              <li><a href="#">Cleanup Premium</a></li>
-              
+              <li><a href="#">Cleanup Premium</a></li> 
             </ul>
-          </div>
-
+          </div> 
           <div class="shop-link">
             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="shop" class="shop-icon" />
             <a href="shop.html">Shop</a>
@@ -188,8 +165,7 @@ a.back-btn:hover {
 <div class="dropdown country-dropdown">
   <a href="#" id="selected-country">
     <img src="https://flagcdn.com/24x18/in.png" alt="IN" class="flag-small"> India - English ▾
-  </a>
-
+  </a> 
   <ul class="dropdown-menu" id="country-list">
     <li data-flag-src="https://flagcdn.com/24x18/in.png" data-name="India" data-lang="English (IN)">
       <a href="#"><img src="https://flagcdn.com/24x18/in.png" class="flag-small" alt="IN"> India - English</a>
@@ -227,8 +203,7 @@ a.back-btn:hover {
       <div class="bottom-right">
         <div class="link-item">
           <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" alt="settings" class="icon" />
-          <a href="#">Settings</a>
-
+          <a href="#">Settings</a> 
           <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="account" class="icon" />
           <a href="#">Account</a>
         </div>
@@ -243,39 +218,32 @@ a.back-btn:hover {
       <img src="" alt="Thumbnail 2" class="thumb">
       <img src="" alt="Thumbnail 3" class="thumb">
     </div>
-  </div>
-
+  </div> 
   <div class="info">
     <h2 id="product-name"></h2>
     <p class="price" id="product-price"></p>
-    <p id="product-desc"></p>
-
+    <p id="product-desc"></p> 
     <div class="quantity">
       <label for="qty">Quantity:</label>
       <input type="number" id="qty" value="1" min="1">
-    </div>
-
+    </div> 
     <div class="actions">
       <button class="btn add-cart">Add to Cart</button></a>
       <button class="btn buy-now">Buy Now</button>
-    </div>
-
+    </div> 
     <a href="shop.html" class="back-btn">← Back to Shop</a>
   </div>
-</div>
- 
+</div> 
 <h3 style="text-align:center; margin-top:50px;">Related Products</h3>
 <div class="related-products" id="related-products"></div> 
 <div id="modal" class="modal">
   <div class="modal-content">
     <span id="close-modal">&times;</span>
     <p id="modal-msg"></p>
-    <a href="cart.html"><button>Go to Cart</button></a>
-
+    <a href="cart.html"><button>Go to Cart</button></a> 
     <button id="continue-shopping">Continue Shopping</button>
   </div>
-</div>
-
+</div> 
 <style> 
 .image-gallery {
   display: flex;
@@ -334,8 +302,7 @@ a.back-btn:hover {
   border: none;
 }
 #go-cart { background: #28a745; color: white; }
-#continue-shopping { background: #007bff; color: white; }
- 
+#continue-shopping { background: #007bff; color: white; } 
 .related-products {
   display: flex;
   flex-wrap: wrap;
@@ -372,37 +339,32 @@ a.back-btn:hover {
   background: #28a745;
   color: white;
 }
-</style>
-
+</style> 
 <script>
 // Existing products array
 const products = [
   {id:1, name:"Avast Essential Business Security", price:25, desc:"Next-gen protection for small businesses.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Essential%20Business%20Security%20Box%20Shot.png"},
-  {id:2, name:"Avast Premium Business Security", price:40, desc:"Award-winning protection with VPN & privacy tools.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Business%20Security%20Box%20Shot.png"},
+  {id:2, name:"Avast Premium Business Security", price:40, desc:"Award-winning protection with VPN & privacy tools.", image:"image/Premium Business Security Box Shot.webp"},
   {id:3, name:"Avast Ultimate Business Security", price:35, desc:"Business antivirus with privacy & patch management.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Ultimate%20Business%20Security%20Box%20Shot.png"},
   {id:4, name:"Avast Business Patch Management", price:50, desc:"Patch management for your SMB devices.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Patch%20Management%20Box%20Shot.png"},
-  {id:5, name:"Avast Business Cloud Backup box shot", price:29, desc:"Avast Business Cloud Backup safeguards your critical business data with automated, cloud-based protection you can count on. Designed for companies of all sizes, it ensures your files, documents, and system images are always backed up and easily recoverable in the event of hardware failure, ransomware, or human error.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Cloud%20Backup%20Box%20Shot.png"},
+  {id:5, name:"Avast Business Cloud Backup box shot", price:29, desc:"Avast Business Cloud Backup safeguards your critical business data with automated, cloud-based protection you can count on. Designed for companies of all sizes, it ensures your files, documents, and system images are always backed up and easily recoverable in the event of hardware failure, ransomware, or human error.", image:"image/SMB Cloud Backup Box Shot.webp"},
   {id:6, name:"Avast Business Premium Remote Control box shot", price:20, desc:"Avast Business Premium Remote Control allows IT administrators and support teams to connect to user devices instantly and resolve issues without leaving their desks. Designed for today’s hybrid workplaces, it delivers fast, seamless, and secure remote sessions directly from the Avast Business Hub.", image:"https://39506960.fs1.hubspotusercontent-na1.net/hubfs/39506960/SMB%20Premium%20Remote%20Control%20Box%20Shot.png"},
-];
- 
+]; 
 const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get("id"));
-const product = products.find(p => p.id === productId);
-
+const product = products.find(p => p.id === productId); 
 if(product){
   document.getElementById("product-name").textContent = product.name;
   document.getElementById("product-price").textContent = `$${product.price}`;
   document.getElementById("product-desc").textContent = product.desc;
-  document.getElementById("main-image").src = product.image;
-
+  document.getElementById("main-image").src = product.image; 
   // Thumbnail gallery
   const thumbs = document.querySelectorAll(".thumb");
   thumbs.forEach((t,i)=>{
     t.src = products[i % products.length].image;
     t.addEventListener("click",()=>{document.getElementById("main-image").src = t.src});
   });
-}
-
+} 
 // Zoom effect
 const mainImg = document.getElementById("main-image");
 mainImg.addEventListener("mouseover", function(){
@@ -411,14 +373,11 @@ mainImg.addEventListener("mouseover", function(){
 });
 mainImg.addEventListener("mouseout", function(){
   this.style.transform = "scale(1)";
-});
-
- 
+}); 
 const modal = document.getElementById("modal");
 const modalMsg = document.getElementById("modal-msg");
 document.querySelector(".add-cart").addEventListener("click", ()=>{
-  const qty = parseInt(document.getElementById("qty").value);
-
+  const qty = parseInt(document.getElementById("qty").value); 
   // Add to localStorage cart
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const existingIndex = cart.findIndex(item=>item.id===product.id);
@@ -427,15 +386,12 @@ document.querySelector(".add-cart").addEventListener("click", ()=>{
   } else {
     cart.push({id: product.id, name: product.name, price: product.price, image: product.image, qty: qty});
   }
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-
+  localStorage.setItem("cart", JSON.stringify(cart)); 
   modalMsg.textContent = `${qty} x ${product.name} added to cart!`;
   modal.style.display = "block";
 });
 document.querySelector(".buy-now").addEventListener("click", ()=>{
-  const qty = parseInt(document.getElementById("qty").value);
- 
+  const qty = parseInt(document.getElementById("qty").value); 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const existingIndex = cart.findIndex(item=>item.id===product.id);
   if(existingIndex >= 0){
@@ -443,16 +399,13 @@ document.querySelector(".buy-now").addEventListener("click", ()=>{
   } else {
     cart.push({id: product.id, name: product.name, price: product.price, image: product.image, qty: qty});
   }
-  localStorage.setItem("cart", JSON.stringify(cart));
-
+  localStorage.setItem("cart", JSON.stringify(cart)); 
   // Redirect to cart page
   window.location.href = "cart.html";
-});
-  
+}); 
 document.getElementById("close-modal").onclick = ()=> modal.style.display = "none";
 document.getElementById("continue-shopping").onclick = ()=> modal.style.display = "none";
-window.onclick = (e)=> { if(e.target==modal) modal.style.display="none"; }
- 
+window.onclick = (e)=> { if(e.target==modal) modal.style.display="none"; } 
 const relatedContainer = document.getElementById("related-products");
 products.filter(p=>p.id!==productId).forEach(p=>{
   const card = document.createElement("div");
@@ -465,21 +418,16 @@ products.filter(p=>p.id!==productId).forEach(p=>{
   `;
   relatedContainer.appendChild(card);
 });
-</script>
-
-
+</script> 
 <!-- Footer Section -->
 <footer class="site-footer">
-  <div class="footer-container">
- 
+  <div class="footer-container"> 
     <div class="footer-brand">
-      <h2>Avast</h2>
- 
+      <h2>Avast</h2> 
       <div class="dropdown country-dropdown">
         <a href="#" id="footer-selected-country">
           <img src="https://flagcdn.com/24x18/us.png" class="flag-small" alt="US"> USA - English ▾
-        </a>
-
+        </a> 
         <ul class="dropdown-menu" id="footer-country-list">
           <li data-flag-src="https://flagcdn.com/24x18/in.png" data-name="India" data-lang="English (IN)">
             <a href="#"><img src="https://flagcdn.com/24x18/in.png" class="flag-small" alt="IN"> India - English</a>
@@ -509,8 +457,7 @@ products.filter(p=>p.id!==productId).forEach(p=>{
           <img src="https://cdn-icons-png.flaticon.com/512/733/733646.png" alt="YouTube" class="social-icon">
         </a>
       </div>
-    </div>
-
+    </div> 
     <!-- Footer Links -->
     <div class="footer-links">
       <h3>For Home</h3>
@@ -520,8 +467,7 @@ products.filter(p=>p.id!==productId).forEach(p=>{
       <a href="#">Performance</a>
       <a href="#">Blog</a>
       <a href="#">Forum</a>
-    </div>
-
+    </div> 
     <div class="footer-links">
       <h3>For Business</h3>
       <a href="#">Business Support</a>
@@ -529,13 +475,11 @@ products.filter(p=>p.id!==productId).forEach(p=>{
       <a href="#">Business Partners</a>
       <a href="#">Business Blog</a>
       <a href="#">Affiliates</a>
-    </div>
-
+    </div> 
     <div class="footer-links">
       <h3>For Partners</h3>
       <a href="#">Mobile Carriers</a>
-    </div>
-
+    </div> 
     <div class="footer-links">
       <h3>About</h3>
       <a href="contact.html">Contact Us</a>
@@ -544,10 +488,8 @@ products.filter(p=>p.id!==productId).forEach(p=>{
       <a href="#">Digital Trust</a>
       <a href="#">Technology</a>
       <a href="#">Research Participation</a>
-    </div>
-
-  </div>
-
+    </div> 
+  </div> 
   <!-- Footer Bottom -->
   <div class="footer-bottom">
     <p>© 2025 Gen Digital Inc. All rights reserved.</p>

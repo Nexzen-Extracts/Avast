@@ -1,13 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Header Layout</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Avast</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.8;
+}
+
+h1 {
+  text-align: center;
+  color: #ff7800;
+  font-size: 34px;
+  margin: 40px 0 20px 0;
+}
+
+
+.intro-content {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Section container */
+section {
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+/* Left column: headings */
+.policy-headings {
+  flex: 0 0 30%;
+  max-width: 30%;
+  padding-right: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.policy-headings h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  color: #222;
+  transition: 0.3s;
+}
+
+.policy-headings h2:hover {
+  color: #ff7800;
+}
+
+/* Right column: content */
+.policy-content {
+  flex: 0 0 70%;
+  max-width: 70%;
+  padding-left: 20px;
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.content-section ul {
+  padding-left: 20px;
+}
+
+.content-section a {
+  color: #ff7800;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  section {
+    flex-direction: row;
+  }
+  .policy-headings {
+    flex: 0 0 35%;
+    max-width: 35%;
+    padding-right: 15px;
+  }
+  .policy-content {
+    flex: 0 0 65%;
+    max-width: 65%;
+    padding-left: 15px;
+  }
+  h1 { font-size: 28px; }
+  .intro-content { font-size: 15px; }
+  .policy-headings h2 { font-size: 16px; }
+  .content-section p, .content-section li { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  section {
+    flex-direction: row;
+  }
+  .policy-headings {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+  .policy-content {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+  h1 { font-size: 24px; }
+  .intro-content { font-size: 14px; }
+  .policy-headings h2 { font-size: 14px; }
+  .content-section p, .content-section li { font-size: 14px; }
+}
+</style>
+
 </head>
 <body>
- <!--  Top Offer Header -->
+  <!--  Top Offer Header -->
   <div class="top-header">
     <img src="image/discount-1-mono.svg" alt="offer" class="offer-icon" />
     <p style="font-size:18px;">Save 30% on Premium Security</p>
@@ -131,96 +255,201 @@
     </div>
   </header>
 
+<!-- Centered heading -->
+<h1>Privacy Policy</h1>
 
-<section style="max-width: 900px; margin: 40px auto; padding: 30px 20px; background-color: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); font-family: 'Poppins', Arial, sans-serif; line-height: 1.8; color: #333;">
-  <h1 style="text-align: center; color: #ff7800; font-size: 34px; margin-bottom: 20px;">Privacy Policy</h1>
-  <p style="text-align:center; font-size:16px; color:#555; margin-bottom:20px;"><strong>Avast Help &gt; Privacy Policy</strong></p>
 
-  <p style="font-size:16px; color:#555; margin-bottom:20px;">
-    At <strong>Avast Antivirus</strong>, we respect and protect your privacy. This Privacy Policy explains how we collect, use, store, and protect your personal information when you visit our website or use our services.
-  </p>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">1. Information We Collect</h2>
-  <ul style="padding-left:20px; font-size:16px; color:#555; margin-bottom:20px;">
-    <li><strong>Personal Information:</strong> Name, email address, phone number, and other details you provide.</li>
-    <li><strong>Usage Data:</strong> Information about how you use our website, including IP addresses, browser type, and interactions with our site.</li>
-    <li><strong>Device Information:</strong> Information about your device, such as operating system, type, and web browser.</li>
-    <li><strong>Cookies:</strong> We use cookies to enhance experience, analyze performance, and personalize content.</li>
+<section>
+  <!-- Left Column: Headings -->
+  <div class="policy-headings">
+    <h2 onclick="showContent('section1')">1. Information We Collect</h2>
+    <h2 onclick="showContent('section2')">2. How We Use Your Information</h2>
+    <h2 onclick="showContent('section3')">3. How We Protect Your Information</h2>
+    <h2 onclick="showContent('section4')">4. Sharing Your Information</h2>
+    <h2 onclick="showContent('section5')">5. Cookies and Tracking</h2>
+    <h2 onclick="showContent('section6')">6. Your Rights</h2>
+    <h2 onclick="showContent('section7')">7. Children’s Privacy</h2>
+    <h2 onclick="showContent('section8')">8. Policy Updates</h2>
+    <h2 onclick="showContent('section9')">9. Contact Us</h2>
+    <h2 onclick="showContent('section10')">10. Data Retention</h2>
+    <h2 onclick="showContent('section11')">11. Third-Party Links</h2>
+   
+  </div>
+
+  <!-- Right Column: Content -->
+  <div class="policy-content">
+  <div id="section1" class="content-section active">
+  <h2>Information We Collect</h2>
+  <p>At <strong>Avast Antivirus</strong>, we respect and protect your privacy. To provide and improve our services, we may collect the following types of information:</p>
+  <ul>
+    <li><strong>Personal Information:</strong> Name, email, phone number, and other details you provide during registration, contact, or support interactions.</li>
+    <li><strong>Usage Data:</strong> Information about your interaction with our website, products, and services, including IP address, browser type, pages visited, and duration of use.</li>
+    <li><strong>Device Information:</strong> Device type, operating system, browser, unique device identifiers, and system settings to ensure compatibility and enhance performance.</li>
+    <li><strong>Cookies and Tracking:</strong> Used for analytics, improving website experience, remembering preferences, and personalizing content and offers.</li>
+    <li><strong>Location Data:</strong> Approximate location based on IP address or device settings to provide location-specific services.</li>
+    <li><strong>Support and Communication Data:</strong> Information shared during customer support inquiries, surveys, or communications with Avast representatives.</li>
+    <li><strong>Security and Threat Data:</strong> Data about malware detection, security incidents, or suspicious activity to enhance protection and maintain service quality.</li>
   </ul>
+  <p>We collect this information responsibly and use it only to enhance your experience, ensure security, and provide relevant services and communications.</p>
+</div>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">2. How We Use Your Information</h2>
-  <ul style="padding-left:20px; font-size:16px; color:#555;">
-    <li>To provide and improve our antivirus and online protection services.</li>
-    <li>To respond to inquiries and deliver customer support.</li>
-    <li>To send service updates, newsletters, or promotional information.</li>
-    <li>To analyze and enhance website performance.</li>
-    <li>To personalize your experience with Avast.</li>
+
+  <div id="section2" class="content-section">
+  <h2>We use your information for:</h2>
+  <ul>
+    <li>Delivering and improving antivirus protection and services.</li>
+    <li>Responding to support inquiries and requests.</li>
+    <li>Sending service updates, newsletters, and promotional offers.</li>
+    <li>Personalizing your experience on our website and apps.</li>
+    <li>Analyzing website and app performance to improve features.</li>
+    <li>Detecting, preventing, and addressing security threats or fraudulent activity.</li>
+    <li>Conducting research and analytics to better understand user needs.</li>
+    <li>Complying with legal obligations and enforcing our policies.</li>
+    <li>Providing relevant recommendations, offers, and marketing communications.</li>
+    <li>Improving our communication channels and customer support efficiency.</li>
+    <li>Ensuring the integrity and functionality of our products and services.</li>
   </ul>
+  <p>We handle your data responsibly and securely, following applicable privacy laws and our <a href="#privacy-policy">Privacy Policy</a>.</p>
+</div>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">3. How We Protect Your Information</h2>
-  <p style="font-size:16px; color:#555; margin-bottom:20px;">
-    We use encryption, secure servers, and regular audits to safeguard your information. While we take strong measures, no online transmission is 100% secure.
-  </p>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">4. Sharing Your Information</h2>
-  <p style="font-size:16px; color:#555; margin-bottom:10px;">We do not sell or lease your data. Sharing occurs only when:</p>
-  <ul style="padding-left:20px; font-size:16px; color:#555;">
-    <li><strong>With Service Providers:</strong> For hosting, analytics, or payment processing.</li>
-    <li><strong>For Legal Reasons:</strong> When required by law.</li>
-    <li><strong>Business Transfers:</strong> During mergers or acquisitions.</li>
+    <div id="section3" class="content-section">
+  <h2>Your information is protected using:</h2>
+  <ul>
+    <li>Encryption of sensitive data during transmission and storage.</li>
+    <li>Secure servers with regular security audits and maintenance.</li>
+    <li>Access controls and authentication protocols for internal staff.</li>
+    <li>Continuous monitoring for unusual or suspicious activities.</li>
+    <li>Regular software updates and security patches to prevent vulnerabilities.</li>
+    <li>Strict data retention policies to minimize exposure of personal information.</li>
+    <li>Incident response protocols to quickly address potential data breaches.</li>
+    <li>Compliance with international security standards and regulations.</li>
+    <li>Employee training programs to ensure adherence to security best practices.</li>
   </ul>
+  <p>While we use strong measures, no online system is completely secure.</p>
+</div>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">5. Cookies and Tracking</h2>
-  <p style="font-size:16px; color:#555; margin-bottom:20px;">
-    Cookies help improve browsing experience and personalize content. You can manage cookies in your browser settings.
-  </p>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">6. Your Rights</h2>
-  <ul style="padding-left:20px; font-size:16px; color:#555;">
-    <li>Access, update, or delete your personal data.</li>
-    <li>Opt out of promotional emails anytime.</li>
-    <li>Withdraw consent for data collection (may affect functionality).</li>
+    <div id="section4" class="content-section">
+  <h2>We do not sell your data. Sharing happens only under these circumstances:</h2>
+  <ul>
+    <li><strong>With Service Providers:</strong> Hosting, analytics, customer support, or payment processing partners to help us provide services.</li>
+    <li><strong>For Legal Compliance:</strong> When required by law, regulation, or legal process, including to protect rights and safety.</li>
+    <li><strong>During Business Transfers:</strong> In the event of mergers, acquisitions, reorganizations, or asset sales.</li>
+    <li><strong>With Consent:</strong> When you explicitly agree to share information with third parties.</li>
+    <li><strong>For Safety and Security:</strong> To detect, prevent, or address fraud, security issues, or technical problems.</li>
+    <li><strong>For Research and Analytics:</strong> Aggregated or anonymized data may be shared for insights or product improvements.</li>
   </ul>
-  <p style="font-size:16px; color:#555;">For requests, contact us at <a href="mailto:privacy@avasthelp.com" style="color:#ff7800; text-decoration:none;">privacy@avasthelp.com</a>.</p>
+</div>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">7. Children’s Privacy</h2>
-  <p style="font-size:16px; color:#555;">
-    Our services are not designed for children under 13. We do not knowingly collect their data.
-  </p>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">8. Policy Updates</h2>
-  <p style="font-size:16px; color:#555;">
-    Avast reserves the right to modify this policy. Updates will appear here with a new effective date.
-  </p>
+    <div id="section5" class="content-section">
+  <h2>Cookies and tracking technologies help us:</h2>
+  <ul>
+    <li>Understand user behavior to improve our services and website experience.</li>
+    <li>Personalize content, offers, and recommendations based on your preferences.</li>
+    <li>Enable functionality like remembering login details, language, and settings.</li>
+    <li>Measure website traffic and performance for analytics purposes.</li>
+    <li>Support marketing campaigns and targeted advertisements responsibly.</li>
+    <li>Ensure security by detecting suspicious activity and potential threats.</li>
+  </ul>
+  <p>You can manage cookies via your browser settings or device preferences.</p>
+</div>
 
-  <h2 style="color:#222; font-size:22px; margin-top:25px;">9. Contact Us</h2>
-  <p style="font-size:16px; color:#555;">
-    For questions or privacy concerns, email us at <a href="mailto:privacy@avasthelp.com" style="color:#ff7800; text-decoration:none;">privacy@avasthelp.com</a>.
-  </p>
 
-  <!-- Responsive  -->
-  <style>
-    @media (max-width: 768px) {
-      section h1 { font-size: 28px !important; }
-      section h2 { font-size: 20px !important; }
-      section p, section li { font-size: 15px !important; }
-      section { padding: 25px 15px !important; margin: 20px auto !important; }
-    }
-    @media (max-width: 480px) {
-      section h1 { font-size: 24px !important; }
-      section h2 { font-size: 18px !important; }
-      section p, section li { font-size: 14px !important; }
-      section { padding: 20px 10px !important; }
-    }
-  </style>
+    <div id="section6" class="content-section">
+      <p>You have rights regarding your data:</p>
+      <ul>
+        <li>Access, update, or request deletion of your personal information.</li>
+        <li>Opt out of marketing or promotional communications.</li>
+        <li>Withdraw consent for certain data collection activities.</li>
+      </ul>
+      <p>For requests, email: <a href="mailto:privacy@avasthelp.com">privacy@avasthelp.com</a></p>
+    </div>
+
+   <div id="section7" class="content-section">
+  <h2>Child Data Protection</h2>
+  <p>Our services are not intended for children under 13. We do not knowingly collect their data. If discovered, we delete any such information promptly. Parents or guardians can contact us to request data removal or further assistance.</p>
+  <ul>
+    <li>We encourage parents to monitor their children's online activity and guide them in using our services safely.</li>
+    <li>Children under 13 should only use our services with parental consent and supervision.</li>
+    <li>Any personal information collected from children will be used solely to provide requested services and will not be shared for marketing purposes.</li>
+    <li>Parents can request access to their child’s information or ask for it to be deleted by contacting our privacy team.</li>
+    <li>We maintain strict security measures to ensure that any data we may inadvertently collect from children is protected.</li>
+    <li>We regularly review our services to ensure compliance with child privacy regulations and best practices.</li>
+  </ul>
+  <p>For any questions or concerns regarding child data protection, email: <a href="mailto:privacy@avasthelp.com">privacy@avasthelp.com</a></p>
+</div>
+
+
+    <div id="section8" class="content-section">
+  <h2>Privacy Policy Updates</h2>
+  <p>Policy updates are communicated by posting the revised Privacy Policy with a new effective date. Users are encouraged to review the policy regularly to stay informed about how we collect, use, and protect personal information.</p>
+  <ul>
+    <li>Significant changes affecting user rights or data usage will be highlighted in the updated policy.</li>
+    <li>Users will be notified of major updates via email or in-app notifications where applicable.</li>
+    <li>Continued use of our services after updates indicates acceptance of the revised policy.</li>
+    <li>We strive to keep our policies transparent and provide clear explanations of any modifications.</li>
+    <li>For questions about the changes or clarification, users can contact our privacy team at: <a href="mailto:privacy@avasthelp.com">privacy@avasthelp.com</a></li>
+  </ul>
+</div>
+
+
+    <div id="section9" class="content-section">
+  <h2>Contact Us</h2>
+  <p>If you have any questions, concerns, or requests regarding your privacy or our data practices, please reach out to us. Our team is here to help and respond promptly.</p>
+  <ul>
+    <li>Email: <a href="mailto:privacy@avasthelp.com">privacy@avasthelp.com</a></li>
+    <li>Response times may vary, but we aim to address all inquiries as quickly as possible.</li>
+    <li>You can also contact us regarding requests to access, update, or delete your personal information.</li>
+    <li>For urgent privacy issues, please specify the nature of your request in your email for faster assistance.</li>
+  </ul>
+</div>
+
+
+    <div id="section10" class="content-section">
+  <h2>Data Retention Policy</h2>
+  <p>We manage the retention of personal data carefully to protect your privacy while fulfilling operational and legal requirements.</p>
+  <ul>
+    <li>We keep your personal data only as long as needed for the purposes described.</li>
+    <li>Inactive accounts may have data deleted after a specific retention period.</li>
+    <li>Logs and anonymized data may be retained longer for analytics, research, and compliance purposes.</li>
+    <li>When personal data is no longer required, we securely delete or anonymize it to prevent unauthorized access.</li>
+    <li>Retention periods may vary depending on regulatory obligations and internal policies.</li>
+  </ul>
+  <p>Users can contact us to inquire about the retention period of their data or request deletion where applicable.</p>
+</div>
+
+
+  <div id="section11" class="content-section">
+  <h2>Third-Party Links</h2>
+  <p>Our website may include links to external websites, which are not controlled by Avast. Please read the following carefully:</p>
+  <ul>
+    <li>We are not responsible for the privacy practices, content, or security of third-party sites.</li>
+    <li>Third-party websites may independently collect personal information. Review their privacy policies before sharing any data.</li>
+    <li>We do not endorse, guarantee, or take responsibility for the products, services, or content offered on external sites.</li>
+    <li>Accessing third-party links is at your own risk. Users should exercise caution when navigating external websites.</li>
+    <li>Avast is not liable for any damages, loss, or issues arising from your interaction with third-party websites.</li>
+    <li>Some external sites may contain tracking technologies or cookies. Their use of these tools is governed by their own privacy policies.</li>
+    <li>We recommend that users maintain up-to-date security software and follow safe browsing practices when visiting third-party websites.</li>
+  </ul>
+  <p>For more information on how we handle your data on our site, please refer to our <a href="#privacy-policy">Privacy Policy</a>.</p>
+</div>
+
+
+
+  </div>
 </section>
 
-
-
-
-
-
-  <!-- Footer Section -->
+<script>
+function showContent(sectionId) {
+  const sections = document.querySelectorAll('.content-section');
+  sections.forEach(sec => sec.classList.remove('active'));
+  document.getElementById(sectionId).classList.add('active');
+}
+</script>
+<!-- Footer Section -->
 <footer class="site-footer">
    <div class="footer-container">
     <div class="footer-brand">
@@ -307,7 +536,5 @@
   </div>
 </footer>
 <script src="script.js"></script>
-</body>
-
 </body>
 </html>

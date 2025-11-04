@@ -92,28 +92,28 @@ a.back-btn:hover {
   </style>
 </head>
 <body>
-    <!-- 🔝 Top Offer Header -->
-  <div class="top-header">
-    <img src="image/discount-1-mono.svg" alt="offer" class="offer-icon" />
-    <p style="font-size:18px;">Save 30% on Premium Security</p>
-  </div> 
-  <!-- 🧭 Main Header -->
-  <header class="main-header">
-    <!-- Left section -->
+    <!-- Main Header -->
+   <header class="main-header">
     <div class="left-section">
       <a href="home.html" target="_blank">
   <img src="image/Avast_Business_SingleLine_Logo_V2_WhiteFill_Symbol_Without_TM_Positive_.png" 
        alt="Logo" 
-       class="main-logo" />
-</a> 
-      <div class="nav-section">
-        <!-- Top navigation -->
+       class="main-logo" /></a>
+       <!-- Hamburger Menu -->
+<div class="hamburger">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+
+       <div class="nav-section">
         <div class="top-links">
           <a href="#">For Home</a>
           <a href="#">For Business</a>
           <a href="#">For Partners</a>
-        </div> 
-        <!-- Bottom navigation -->
+          <a href="#">Support</a>
+        </div>       
         <div class="bottom-links">
           <div class="dropdown">
             <a href="#">Security ▾</a>
@@ -124,7 +124,7 @@ a.back-btn:hover {
               <li><a href="#">Avast One</a></li>
             </ul>
           </div>
-          <div class="dropdown">
+           <div class="dropdown">
             <a href="#">Privacy ▾</a>
             <ul class="dropdown-menu">
               <li><a href="#">SecureLine VPN</a></li>
@@ -140,7 +140,7 @@ a.back-btn:hover {
             <a href="#">Performance ▾</a>
             <ul class="dropdown-menu">
               <li><a href="#">Driver Updater</a></li>
-              <li><a href="#">Cleanup Premium</a></li> 
+              <li><a href="#">Cleanup Premium</a></li>               
             </ul>
           </div> 
           <div class="shop-link">
@@ -149,8 +149,8 @@ a.back-btn:hover {
           </div>
         </div>
       </div>
-    </div> 
-    <div class="right-section">
+    </div>
+     <div class="right-section">
       <div class="top-right">
         <a href="about.html" class="about-link">About</a>
 
@@ -161,12 +161,12 @@ a.back-btn:hover {
             <li><a href="#">Security Tips</a></li>
             <li><a href="#">Business News</a></li>
           </ul>
-        </div> 
-<div class="dropdown country-dropdown">
+        </div>
+ <div class="dropdown country-dropdown">
   <a href="#" id="selected-country">
     <img src="https://flagcdn.com/24x18/in.png" alt="IN" class="flag-small"> India - English ▾
-  </a> 
-  <ul class="dropdown-menu" id="country-list">
+  </a>
+   <ul class="dropdown-menu" id="country-list">
     <li data-flag-src="https://flagcdn.com/24x18/in.png" data-name="India" data-lang="English (IN)">
       <a href="#"><img src="https://flagcdn.com/24x18/in.png" class="flag-small" alt="IN"> India - English</a>
     </li>
@@ -198,18 +198,22 @@ a.back-btn:hover {
       <a href="#"><img src="https://flagcdn.com/24x18/cn.png" class="flag-small" alt="CN"> China - 中文</a>
     </li>
   </ul>
-</div> 
-      </div> 
+</div>
+    </div>
       <div class="bottom-right">
+        
         <div class="link-item">
-          <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" alt="settings" class="icon" />
-          <a href="#">Settings</a> 
-          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="account" class="icon" />
+          Call Now:8774196255    
+          <img style="margin-left:10px;"src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png " alt="settings" class="icon" />
+          <a href="#">Settings</a>
+
+          <img style="margin-left:10px;" src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="account" class="icon" />
           <a href="#">Account</a>
         </div>
       </div>
     </div>
-  </header>  
+  </header>
+
 <div class="product-detail">
   <div class="image-gallery">
     <img id="main-image" src="" alt="Product Image" class="zoom">
@@ -423,7 +427,7 @@ products.filter(p=>p.id!==productId).forEach(p=>{
 <footer class="site-footer">
   <div class="footer-container"> 
     <div class="footer-brand">
-      <h2>Avast</h2> 
+       <img src="image/avast logo.png" alt="Avast logo" style="width:250px; height:50px; object-fit:contain; margin-right:10px; display:inline-block; vertical-align:middle;"> 
       <div class="dropdown country-dropdown">
         <a href="#" id="footer-selected-country">
           <img src="https://flagcdn.com/24x18/us.png" class="flag-small" alt="US"> USA - English ▾

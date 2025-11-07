@@ -1233,7 +1233,7 @@ a:hover { color: #007bff; }
 .cert-card:hover .cert-title {
   color: #007bff;
 }
-/* --- Mobile & Tablet Responsive Certification Section --- */
+/* --- Mobile & Tablet Responsive */
 @media (max-width: 900px) {
   .certification-section {
     padding: 60px 30px;
@@ -1246,7 +1246,7 @@ a:hover { color: #007bff; }
 
   .cert-card {
     max-width: 100%;
-    height: auto; /* Adjust height automatically for mobile */
+    height: auto; 
     padding: 25px 15px;
     margin-bottom: 20px;
   }
@@ -1456,7 +1456,7 @@ a:hover { color: #007bff; }
 .site-footer .social-links {
   display: flex;
   gap: 15px;
-  margin-top: 80px;
+  margin-top: 0px;
 } 
 .site-footer .social-icon {
   width: 24px;

@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    /* Main Header */
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: #fff;
+      padding: 15px 40px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    .left-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .main-logo {
+      width: 250px;
+      height: 50px;
+    }
+    .nav-section {
+      display: flex;
+      flex-direction: column;
+    }
+    .top-links {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 8px;
+    }
+    .top-links a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .bottom-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .bottom-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    a:hover {
+      color: #007bff;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      list-style: none;
+      padding: 8px 0;
+      margin: 0;
+      border-radius: 5px;
+      top: 22px;
+      z-index: 100;
+      min-width: 160px;
+    }
+    .dropdown-menu li a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 5px 10px;
+    }
+    .dropdown-menu li a:hover {
+      background-color: #f2f2f2;
+      color: #007bff;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .shop-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .shop-icon {
+      width: 18px;
+      height: 18px;
+    }
+    .right-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+    .top-right a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .bottom-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .link-item a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+    .flag-small {
+      width: 20px;
+      height: 14px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .dropdown-menu li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #selected-country img.flag-small {
+      margin-right: 8px;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+    }
+    @media (max-width: 668px) {
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        width: 100%;
+      }
+      .left-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .main-logo {
+        width: 130px;
+        height: auto;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .nav-section,
+      .right-section {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .nav-section.active,
+      .right-section.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 15px 0;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        animation: slideDown 0.3s ease;
+      }
+      .top-links,
+      .bottom-links,
+      .top-right,
+      .bottom-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+      }
+      .dropdown-menu {
+        position: relative;
+        width: 100%;
+        border: none;
+        background: #f9f9f9;
+        box-shadow: none;
+        padding-left: 15px;
+      }
+      .hamburger.open div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .hamburger.open div:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+       /*  Hero Section */
+    .hero {
+      background-color: #f5f5f5;
+      padding: 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .hero-content {
+      max-width: 700px;
+      text-align: center;
+    }
+    .hero-content h1 {
+      font-size: 80px;
+      margin-bottom: 20px;
+      color: #222;
+      font-weight: 700;
+    }
+    .hero-content h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .hero-content p {
+      font-size: 17px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .btn-blue {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 18px 40px;
+      font-size: 18px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+    .btn-blue:hover {
+      background-color: #0056b3;
+    }
+    .btn-black {
+      background-color: #ffdb0c;
+      color: #333;
+      border: none;
+      padding: 18px 40px;
+      font-size: 18px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+    .btn-black:hover {
+      background-color: yellow;
+    }
+    .hero-image img {
+      width: 450px;
+      max-width: 100%;
+    }
+    .avast-banner {
+      background: #fff;
+      padding: 50px 20px;
+    }
+    .feature-row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .feature {
+      background: #fafafa;
+      border-radius: 15px;
+      text-align: center;
+      padding: 20px;
+      width: 200px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+    .feature img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 10px;
+    }
+    .feature p {
+      font-size: 16px;
+      color: #222;
+      line-height: 1.4;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-content h1 {
+        font-size: 50px;
+      }
+      .hero-content h2 {
+        font-size: 24px;
+      }
+      .hero-content p {
+        font-size: 15px;
+      }
+      .btn-blue,
+      .btn-black {
+        width: 100%;
+      }
+      .feature {
+        width: 45%;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 36px;
+      }
+      .hero-content h2 {
+        font-size: 20px;
+      }
+      .hero-content p {
+        font-size: 14px;
+      }
+      .feature {
+        width: 100%;
+      }
+    }
+    /* Achievements Section */
+.achievements-section {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+} 
+.section-header h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #222;
+} 
+.section-header p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+} 
+.achievements-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+} 
+.achievement-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 40px;
+  width: 250px;
+  height:400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.achievement-card:hover {
+  transform: translateY(-5px);
+} 
+.achievement-logo {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto 10px;
+  margin-top: 30px;
+  margin-bottom:20px;
+} 
+.year {
+  font-weight: bold;
+  margin-bottom: 10px;
+} 
+.card-heading {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #222;
+  transition: color 0.3s;
+  margin-top: 20px;
+  
+} 
+.person-name {
+  font-size: 14px;
+  color: #555;
+} 
+.one-word {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+  margin-top:20px;
+} 
+.certificate-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  transition: color 0.3s;
+} 
+.certificate-link:hover {
+  color: #0056b3;
+} 
+.achievement-card:hover .card-heading {
+  color: #007bff;
+} 
+@media (max-width: 992px) {
+  .achievements-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .achievement-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+} 
+.promo-section {
+  text-align: center;
+  padding: 60px 80px;
+  background-color: #071d2b;
+  font-family: 'Segoe UI', sans-serif;
+} 
+.top-btn {
+  background:linear-gradient(to right bottom, #ffbf00, #ffbf00 50%, #ff7800);
+  color: black;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top:100px;
+} 
+.promo-heading {
+  font-size: 38px;
+  font-weight: 600;
+  color: white;
+  margin: 20px 0 10px;
+} 
+.promo-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top:80px;
+} 
+.left-content {
+  flex: 1;
+  text-align: left;
+  margin-left:100px;
+} 
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+} 
+.logo-row img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1); 
+}
+.left-para { 
+  font-size: 18px;
+  color:white;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 500px;
+} 
+.learn-btn {
+  background-color: #0078ff;
+  color: #fff;
+  border: none;
+  padding: 15px 45px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top:80px;
+} 
+.learn-btn:hover {
+  background-color: #005fcc;
+} 
+.right-image img {
+  width: 420px;
+  max-width: 100%;
+  border-radius: 10px;
+} 
+@media (max-width: 900px) {
+  .promo-content {
+    flex-direction: column;
+    text-align: center;
+  } 
+  .left-content {
+    text-align: center;
+  } 
+  .left-para {
+    margin: 0 auto 20px;
+  } 
+  .right-image img {
+    width: 300px;
+  }
+  .logo-row{
+    position:center;
+  }
+  .left-para {
+    margin-left:-100px;
+  }
+  .learn-btn{
+    margin-left:-100px;
+  }
+} 
+.certification-section {
+  text-align: center;
+  padding: 80px 60px;
+  background-color: #f9f9f9;
+} 
+.certification-header h2 {
+  font-size: 38px;
+  color: #111;
+  margin-bottom: 40px;
+} 
+.certification-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+} 
+.cert-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 46px;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 480px;
+  height:500px;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+} 
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+} 
+.cert-logo {
+  width: 180px;
+  height: 120px;
+  margin-bottom: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} 
+.cert-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+.cert-text {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 46px;
+} 
+.cert-link {
+  display: inline-block;
+  background-color: #007bff; 
+  color: #fff;
+  padding: 15px 48px;
+  border-radius: 46px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+} 
+.cert-link:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  color:white;
+} 
+.cert-card:hover .cert-title {
+  color: #007bff;
+}
+@media (max-width: 900px) {
+  .certification-section {
+    padding: 60px 30px;
+  }
+  .certification-header h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  .cert-card {
+    max-width: 100%;
+    height: auto; 
+    padding: 25px 15px;
+    margin-bottom: 20px;
+  }
+  .cert-logo {
+    width: 140px;
+    height: 100px;
+    margin-bottom: 30px;
+  }
+  .cert-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .cert-text {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  .cert-link {
+    padding: 12px 36px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  .certification-section {
+    padding: 40px 15px;
+  }
+  .certification-header h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  .cert-logo {
+    width: 120px;
+    height: 85px;
+    margin-bottom: 25px;
+  }
+  .cert-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .cert-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .cert-link {
+    padding: 10px 28px;
+    font-size: 12px;
+  }
+}
+/* Footer */
+.site-footer {
+  background-color: #071d2b; 
+  color: #fff;
+  padding: 60px 20px 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+.site-footer .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+} 
+.site-footer .footer-brand h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+} 
+.site-footer .country-dropdown {
+  position: relative;
+  margin-bottom: 25px;
+} 
+.site-footer .country-dropdown a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+} 
+.site-footer .country-dropdown a:hover {
+  color: #ff6600;
+} 
+.site-footer .country-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #001f4d;
+  border: 1px solid #333;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  top: 30px;
+  border-radius: 36px;
+  min-width: 200px;
+  z-index: 100;
+} 
+.site-footer .country-dropdown .dropdown-menu li a {
+  color: #ccc;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 15px;
+  font-size: 14px;
+} 
+.site-footer .country-dropdown .dropdown-menu li a:hover {
+  color: #ff6600;
+  background-color: #002966;
+} 
+.site-footer .country-dropdown:hover .dropdown-menu {
+  display: block;
+} 
+.site-footer .flag-small {
+  width: 24px;
+  height: 18px;
+} 
+.site-footer .social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 80px;
+} 
+.site-footer .social-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+} 
+.site-footer .social-icon:hover {
+  transform: scale(1.2);
+} 
+.site-footer .footer-links h3 {
+  font-size: 20px;
+  margin-bottom: 25px;
+} 
+.site-footer .footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 16px;
+  font-size: 14px;
+  transition: color 0.3s;
+} 
+.site-footer .footer-links a:hover {
+  color: #ff6600;
+} 
+.site-footer .footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 20px;
+  margin-left:30px;
+  font-size: 14px;
+  color: #ccc;
+} 
+.site-footer .footer-bottom .legal-links {
+  margin-top: 10px;
+} 
+.site-footer .footer-bottom .legal-links a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s;
+} 
+.site-footer .footer-bottom .legal-links a:hover {
+  color: #ff6600;
+} 
+/* Responsive */
+@media (max-width: 900px) {
+  .site-footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer .footer-links {
+    margin-bottom: 20px;
+  }
+
+  .site-footer .footer-bottom .legal-links a {
+    display: block;
+    margin: 5px 0;
+  }
+} 
+@media (max-width: 900px) {
+  .site-footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }  
+  .site-footer .footer-brand h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  } 
+  .site-footer .country-dropdown {
+    margin-bottom: 20px;
+    position: relative;
+  } 
+  .site-footer .country-dropdown .dropdown-menu {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 160px;
+    background: #001f4d;
+    border-radius: 20px;
+    border: 1px solid #333;
+    padding: 8px 0;
+  } 
+  .site-footer .social-links {
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  } 
+  .site-footer .social-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s, filter 0.3s;
+  } 
+  .site-footer .social-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+  } 
+  .site-footer .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  } 
+  .site-footer .footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  } 
+  .site-footer .footer-links a {
+    font-size: 14px;
+    margin-bottom: 8px;
+  } 
+  .site-footer .footer-bottom {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 1.5;
+  } 
+  .site-footer .footer-bottom .legal-links a {
+    display: block;
+    margin: 4px 0;
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .site-footer .footer-brand h2 {
+    font-size: 20px;
+  }
+  .site-footer .country-dropdown a {
+    font-size: 14px;
+  }
+  .site-footer .footer-links h3 {
+    font-size: 16px;
+    margin-top:-25px;
+  }
+  .site-footer .footer-links a {
+    font-size: 13px;
+    
+  }
+  .site-footer .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Avast One</h1>
+      <h2>Free antivirus and much more, now with anti-scam AI tech</h2>
+      <p>Strengthen your PC’s protection against scams, backed by <strong>Scam Guardian and Avast Assistant.</strong> Get award-winning antivirus protection. Boost your online privacy and safety with VPN. Do it all and more with Avast One.</p>
+      <div class="hero-buttons">
+        <button class="btn-blue">Call Now: +1-877-419-6255</button>
+        <button class="btn-black">Instant Support</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="image/lp-ppx-free-antivirus-brand-hero.svg" alt="Hero Illustration">
+    </div>
+  </section>
+  <!-- Avast Banner -->
+  <section class="avast-banner">
+    <div class="feature-row">
+      <div class="feature">
+        <img src="image/logo 1.svg" alt="AI icon">
+        <p><strong>AI-powered<br>Anti-Scam<br>Guidance</strong></p>
+      </div>
+      <div class="feature">
+        <img src="image/logo 2.svg" alt="Defense icon">
+        <p><strong>Block hidden<br>web scams</strong></p>
+      </div>
+      <div class="feature">
+        <img src="image/installer-files--cd-box.svg" alt="Safe browsing icon">
+        <p><strong>Easy to install,<br>effortless to use</strong></p>
+      </div>
+      <div class="feature">
+        <img src="image/single-shared-ip--globe-users.svg" alt="Easy software icon">
+        <p><strong>Millions of users<br>worldwide</strong></p>
+      </div>
+    </div>
+  </section>
+  <!-- Achievements Section -->
+<section class="achievements-section">
+  <div class="section-header">
+    <h2>We’re award-winning by nature, not just by name</h2>
+    <p>We can help protect you against advanced online threats, backed by one of the globe’s biggest Cyber Safety networks. 
+        <br>And we’ve been proud winners of different awards over the years. Check out some of our more recent ones below.</p>
+  </div>
+   <div class="achievements-container">
+    <div class="achievement-card">
+      <img src="image/vb-100-virus.avif" alt="Logo 1" class="achievement-logo">
+      <p class="year">2024</p>
+      <h3 class="card-heading">“98.7% malware detected, no false alarms”</h3>
+      <p class="person-name">Virus Bulletin</p>
+      <p class="one-word">VB 100</p>
+      <a href="#" class="certificate-link">Official Certificate</a>
+     </div>
+    <div class="achievement-card">
+      <img src="image/vb 2.avif" alt="Logo 2" class="achievement-logo">
+      <p class="year">2024</p>
+      <h3 class="card-heading">"Banking mode prevents malware from breaking in"</h3>
+      <p class="person-name">AVLab</p>
+      <p class="one-word">Internet Banking Protection Test</p>
+      <a href="#" class="certificate-link">Official Certificate</a>
+     </div>
+    <div class="achievement-card">
+      <img src="image/vb 3.avif" alt="Logo 3" class="achievement-logo">
+      <p class="year">2024</p>
+      <h3 class="card-heading">“10/10 real-life threat scenarios tested, detected, and blocked”</h3>
+      <p class="person-name">AV Test</p>
+      <p class="one-word">Best Protection</p>
+      <a href="#" class="certificate-link">Official Certificate</a>
+    </div>
+     <div class="achievement-card">
+      <img src="image/vb 4.avif" alt="Logo 4" class="achievement-logo">
+      <p class="year">2023</p>
+      <h3 class="card-heading">“Total accuracy: 100%, false positives 0%”</h3>
+      <p class="person-name">SE Labs</p>
+      <p class="one-word">Home Endpoint Security Test</p>
+      <a href="#" class="certificate-link">Official Certificate</a>
+    </div>
+  </div>
+</section>
+ <section class="promo-section">
+   <button class="top-btn">Advanced protection</button>
+  <h2 class="promo-heading">Avast Premium Security</h2>
+ <h2 class="promo-heading">Enhanced digital security for PCs, macOS, and mobile devices</h2>
+  <div class="promo-content">
+    <div class="left-content">
+      <div class="logo-row">
+        <img src="image/Win24.svg" alt="logo1">
+        <img src="image/iOS24.svg" alt="logo2">
+        <img src="image/Android24.svg" alt="logo3">
+        <img src="image/Mac25.svg" alt="logo4">
+      </div>
+       <p class="left-para">
+        Want to feel more confident in your digital world? Use our automatic cybersecurity shields against scams, viruses, ransomware, zero-day threats, and other types of malware.
+      </p>
+      <p class="left-para">Plus, we can also help you to:  
+        <ul>
+ <li class="left-para" style="color:white;margin-top:10px;">Get AI-powered anti-scam guidance fast with Avast Assistant.</li>
+<li class="left-para" style="color:white;margin-top:10px;">Block scam websites and emails to stay away from them, backed by AI.</li>
+<li class="left-para" style="color:white;margin-top:10px;margin-bottom:10px;">Protect your personal data and webcam from hackers.
+ </li></ul>
+      <button class="learn-btn">Get Premium Security</button>
+    </div>
+     <div class="right-image">
+      <img src="image/ui-homepage-bait-01.avif" alt="Security Image">
+    </div>
+  </div>
+ </section>
+<!-- Certifications Section -->
+<section class="certification-section">
+  <div class="certification-header">
+    <h2><strong>Need a more specific type of app or service?</strong></h2>  
+  </div>
+   <div class="certification-container">
+    <div class="cert-card">
+      <img src="image/protect-privacy--lock-check.svg" alt="Certificate Logo 1" class="cert-logo">
+      <h3 class="cert-title">Stay safe on public Wi-Fi and much more</h3>
+      <p class="cert-text">Strengthen your online privacy against cybercriminals, internet service providers, and employers. View the vedios
+        and websites you love. Do it with Virtual Private Network(VPN) Software.
+      </p>
+      <a href="#" class="cert-link">Get Avast SecureLine VPN</a>
+    </div>
+     <div class="cert-card">
+      <img src="image/Cleanup-Premium.svg" alt="Certificate Logo 2" class="cert-logo">
+      <h3 class="cert-title">Free up storage space and increase device speed</h3>
+      <p class="cert-text">Create more space for photos, videos, and games. Optimise your device to make it faster. Fix bugs and glitches effortlessly</p>
+      <a href="#" class="cert-link">Get Avast Cleanup</a>
+     </div>
+    <div class="cert-card">
+      <img src="image/Ultimate 234.svg" alt="Certificate Logo 3" class="cert-logo">
+      <h3 class="cert-title">Boost your devices' security, privacy, and performance</h3>
+      <p class="cert-text">Get the two great apps we've  already mentioned on the left. Plus, use Avast Premium Security's advanced cyberthreat protection and our smart online privacy app, Avast AntiTrack.</p>
+      <a href="#" class="cert-link">Get Avast Ultimate</a>
+    </div>
+  </div>
+ </section>
+  <section style="text-align:center; padding:60px 20px;">
+
+    <div style="position:relative; width:100%; max-width:1200px; margin:0 auto;">
+      
+      <img src="image/image  234.avif" alt="Hero Image" 
+           style="width:100%; border-radius:42px; display:block; height:600px;">
+      
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+                  color:#fff; text-align:center;">
+        <h1 style="font-size:38px; margin-bottom:20px; text-shadow:2px 2px 8px rgba(0,0,0,0.6);">
+          For 30 years, we’ve fought for digital freedom for all
+        </h1>
+        <button style="padding:12px 30px; font-size:18px; border:none; border-radius:25px;
+                       background-color:white; color:blue; cursor:pointer; transition:0.3s;">
+          About Avast
+        </button>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center;
+                max-width:1200px; margin:150px auto 0; flex-wrap:wrap;">
+      <h2 style="font-size:38px; color:#222; flex:1; text-align:left; margin:0; line-height:1.4;">
+        <strong>Get security, privacy, and <br>performance tips, straight from <br>the experts</strong>
+      </h2>
+      <button style="padding:15px 45px; font-size:20px; border:none; border-radius:25px;
+                     background-color:#0078ff; color:#fff; cursor:pointer; transition:0.3s; flex-shrink:0; margin-top:20px;">
+        Read more at Avast Academy
+      </button>
+    </div>
+  </section>
+ <section class="achievements-section">
+  <div class="section-header">   
+  </div>
+   <div class="achievements-container">
+    <div class="achievement-card">
+      <img src="image/a.webp" alt="Logo 1" class="cert-logo">
+      <h3 class="card-heading">What Is a Computer Virus and How Does It Work?</h3>
+      <p class="person-name">A computer virus is a malicious program that infects files and spreads across systems. It activates when executed, causing damage or stealing data from the device.
+</p>
+      <a href="#" class="certificate-link">Learn More</a>
+     </div>
+    <div class="achievement-card">
+      <img src="image/a1.webp" alt="Logo 2" class="cert-logo">
+      <h3 class="card-heading">What Is a VPN and How Does It Work?</h3>
+       <p class="one-word">A VPN (Virtual Private Network) encrypts your internet connection and hides your IP address. It creates a secure tunnel between your device and the web, protecting your data and privacy online.
+</p>
+      <a href="#" class="certificate-link">Learn More</a>
+     </div>
+    <div class="achievement-card">
+      <img src="image/a2.webp" alt="Logo 3" class="cert-logo">
+      <h3 class="card-heading">Why Is My Internet So Slow & How to Speed It Up</h3>
+      
+      <p class="one-word">Slow internet can be caused by network congestion, weak Wi-Fi signals, or too many connected devices. To speed it up, try restarting your router, updating equipment, or contacting your internet provider.
+</p>
+      <a href="#" class="certificate-link">Learn More</a>
+     </div>
+    <div class="achievement-card">
+      <img src="image/a3.webp" alt="Logo 4" class="cert-logo">
+      
+      <h3 class="card-heading">What is Hacking</h3>
+      
+      <p class="one-word">Hacking is the act of gaining unauthorized access to a computer system or network. It can be used to steal data, disrupt operations, or exploit security vulnerabilities.
+</p>
+      <a href="#" class="certificate-link">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+<script>
+  function toggleMenu(menu) {
+    menu.classList.toggle('open');
+    document.querySelector('.nav-section').classList.toggle('active');
+    document.querySelector('.right-section').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
